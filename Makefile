@@ -1,2 +1,3 @@
 .PHONY: deploy
-deploy :; forge script script/Deploy.s.sol:DeployPSM3 --sender ${ETH_FROM} --broadcast --slow --verify
+deploy-arbitrum-one :; forge script script/Deploy.s.sol:DeployArbitrumOne --sender ${ETH_FROM} --broadcast --verify
+deploy-base 	    :; forge script script/Deploy.s.sol:DeployBase --sender ${ETH_FROM} --broadcast --verify
