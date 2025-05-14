@@ -68,11 +68,6 @@ contract DeployOptimism is Script {
         vm.startBroadcast();
 
         address psm = PSM3Deploy.deploy({
-            owner        : Unichain.SPARK_EXECUTOR,
-            usdc         : Unichain.USDC,
-            usds         : Unichain.USDS,
-            susds        : Unichain.SUSDS,
-            rateProvider : Unichain.SSR_AUTH_ORACLE
             owner        : Optimism.SPARK_EXECUTOR,
             usdc         : Optimism.USDC,
             usds         : Optimism.USDS,
@@ -102,11 +97,6 @@ contract DeployUnichain is Script {
             usds         : Unichain.USDS,
             susds        : Unichain.SUSDS,
             rateProvider : Unichain.SSR_AUTH_ORACLE
-            owner        : Optimism.SPARK_EXECUTOR,
-            usdc         : Optimism.USDC,
-            usds         : Optimism.USDS,
-            susds        : Optimism.SUSDS,
-            rateProvider : Optimism.SSR_AUTH_ORACLE
         });
 
         vm.stopBroadcast();
