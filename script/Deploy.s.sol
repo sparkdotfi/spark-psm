@@ -6,6 +6,7 @@ import "forge-std/Script.sol";
 import { Arbitrum } from "lib/spark-address-registry/src/Arbitrum.sol";
 import { Base }     from "lib/spark-address-registry/src/Base.sol";
 import { Optimism } from "lib/spark-address-registry/src/Optimism.sol";
+import { Unichain } from "lib/spark-address-registry/src/Unichain.sol";
 
 import { PSM3Deploy } from "deploy/PSM3Deploy.sol";
 
@@ -80,3 +81,28 @@ contract DeployOptimism is Script {
     }
 
 }
+
+contract DeployUnichain is Script {
+
+    function run() external {
+        vm.createSelectFork(vm.envString("UNICHAIN_RPC_URL"));
+
+        console.log("Deploying PSM...");
+
+        vm.startBroadcast();
+
+        address psm = PSM3Deploy.deploy({
+            owner        : Unichain.SPARK_EXECUTOR,
+            usdc         : Unichain.USDC,
+            usds         : Unichain.USDS,
+            susds        : Unichain.SUSDS,
+            rateProvider : Unichain.SSR_AUTH_ORACLE
+        });
+
+        vm.stopBroadcast();
+
+        console.log("PSM3 deployed at:", psm);
+    }
+
+}
+
