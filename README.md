@@ -95,3 +95,15 @@ To run tests in this repo, run:
 ```bash
 forge test
 ```
+
+## Audits
+
+Audit reports are hosted on the auditors' public portfolio pages:
+
+| Auditor | Report | Date |
+| --- | --- | --- |
+| ChainSecurity | [Spark PSM](https://www.chainsecurity.com/security-audit/spark-psm/) | 2024-10-22 |
+| Cantina | [MakerDAO Spark PSM3 Governance Audit](https://cantina.xyz/portfolio/8f86c4a6-a42c-4541-a4b4-154fb8a3d919) | 2024-10-18 |
+| Cantina | [Spark PSM3 Contract Security Audit](https://cantina.xyz/portfolio/18bed847-07eb-421d-99c5-9571f2885dba) | 2024-08-22 |
+
+ChainSecurity reports are cumulative: each portfolio page hosts the latest version of the report, which covers all previously reviewed versions.
